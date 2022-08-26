@@ -1,7 +1,7 @@
 
 # DailyNews
 
-DailyNews is a news app which includes different categories of fresh news like general, sport, politics, etc. It is built with React, JavaScript, HTML and CSS.
+DailyNews is a news app which includes different categories of fresh news like general, sport, entertainment, etc. It is built with React, JavaScript, HTML, CSS and Bootstrap.
 
 
 ## Installation
