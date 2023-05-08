@@ -10,15 +10,14 @@ const News=(props)=> {
       let lower=word.toLowerCase();
       return lower.charAt(0).toUpperCase() + lower.slice(1);
     }
-    // document.title = `DailyNews - ${capitalize(props.category)}`;
 
     const [articles, setArticles] = useState([]);
     const [totalResults, setTotalResults] = useState(0);
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
-
+    // updating news
     const updateNews=async()=>{
-      props.setProgress(20)
+      props.setProgress(20);
       const url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`
       setLoading(true);
       let data= await fetch(url);
@@ -37,16 +36,6 @@ const News=(props)=> {
       // eslint-disable-next-line
     },[])
     
-    // handlePrevClick=async ()=>{
-    //   setPage(page-1);
-    //   updateNews();
-    // }
-
-    // const handleNextClick=async ()=>{
-    //   setPage(page+1);
-    //   updateNews();
-    // }
-
     const fetchMoreData=async()=>{
       let url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
       setPage(page+1); 
@@ -81,6 +70,7 @@ const News=(props)=> {
                       <button disabled={page+1 > Math.ceil(totalResults/props.pageSize)}
                       type="button" className="btn btn-dark" onClick={handleNextClick}>Next &rarr;</button>
                     </div>} */}
+                    
                 </div>
               </div>
             </InfiniteScroll>            

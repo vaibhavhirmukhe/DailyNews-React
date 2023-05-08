@@ -19,11 +19,8 @@ const App=()=>{
     return (
       <div >
         <BrowserRouter>
-        <Navbar/>
-          <LoadingBar
-          color='#f11946'
-          progress={progress}
-          />
+          <Navbar/>
+          <LoadingBar color='#f11946' progress={progress}/>
           <Routes>
             <Route path="/" element={<News apiKey={apiKey} setProgress={setProgress} key="general" pageSize={pageSize} country="in" category="general"/>}></Route>
             <Route path="/business" element={<News apiKey={apiKey} setProgress={setProgress} key="business" pageSize={pageSize} country="in" category="business"/>}></Route>
